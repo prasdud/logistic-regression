@@ -1,0 +1,4 @@
+run code in virtual environment 
+source genius/bin/activate
+
+need to use java 8. anything newer messes with language_check for some reason.
