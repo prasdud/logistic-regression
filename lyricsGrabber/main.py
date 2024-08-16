@@ -23,6 +23,7 @@ cont = Contractions('GoogleNews-vectors-negative300.bin')
 #cont = Contractions(api_key="glove-twitter-100")
 #cont = Contractions(w)
 print("working")
+
 #print(song.lyrics)
 output1=list(cont.expand_texts([song.lyrics]))
 outputTemp=[]
