@@ -23,7 +23,7 @@ cont = Contractions('GoogleNews-vectors-negative300.bin')
 
 
 def getLyrics(artistName, songName):
-    time.sleep(2)
+    time.sleep(1)
     song = genius.search_song(songName,artistName)
     output1=list(cont.expand_texts([song.lyrics]))
     outputTemp=[]
