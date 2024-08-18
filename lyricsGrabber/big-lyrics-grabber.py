@@ -11,8 +11,8 @@ import time
 #w=models.KeyedVectors.load_word2vec_format('archive.npy', binary=True)
 
 genius=lyricsgenius.Genius("MpY2-SgiN1WZygcE3lXZiRZFnyTcWG8zQBVSyLZGVYnX9Hc607mreDQlvYXoQfDt")
-input_filename = 'songs2.csv'
-output_filename = 'output.csv'
+input_filename = 'songsremaining.csv'
+output_filename = 'outputremaining.csv'
 
 
 #genius=Genius()
