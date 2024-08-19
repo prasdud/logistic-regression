@@ -10,7 +10,7 @@ def loadProfanityCsv(profCsv):
     return profaneWords
 
 
-profanityCsv = 'profanity.csv'
+profanityCsv = 'profanity-unique-main.csv'
 profaneWords = loadProfanityCsv(profanityCsv)
 
 
@@ -19,8 +19,8 @@ def labelProfanity(lyric, profaneWords):
     return 1 if any(word in lyricLower for word in profaneWords) else 0
 
 
-inputCsv = 'input.csv'
-labelledData = 'final_data.csv'
+inputCsv = 'data/final-data-unlabelled.csv'
+labelledData = 'data/final-data-labelled.csv'
 
 with open(inputCsv, mode='r') as infile, open(labelledData, mode='a', newline='') as outfile:
     reader = csv.reader(infile)
