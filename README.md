@@ -16,5 +16,12 @@ https://drive.google.com/file/d/1NSPClpuNIZQegvp1M5EEUUUzvAKNMBVp/view?usp=shari
       <li>next thing to do is retrofit my labeller software to utilize workers and read from my final.csv</li>
       <li>will also work on a main software where user enters name of artist and song</li>
       <li>also need to come up with some sort of ranking system or formula to put the profanity of a song into a numeric value or a letter grade. have not decided yet</li>
+
+  <h3>august 21</h3>
+  <li>turns out i did not need to utilize workers, the training itself was pretty quick, used scikit-learn</li> 
+  <li>obtained the final model. 99 percent accuracy throughout, for both 0 and 1</li>
+  <li>need to create main software</li>
+  <li>need to come up with a formula to rank, will think it over</li>
+  <li>more importantly need to name it. will probably be the hardest thing about this project</li>
 </ul>
 
