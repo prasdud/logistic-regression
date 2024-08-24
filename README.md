@@ -3,7 +3,13 @@ uses logistic regression algorithms to check whether a song contains profanity
 
 requires bin file for contractions, file too big to put on github, 
 https://drive.google.com/file/d/1NSPClpuNIZQegvp1M5EEUUUzvAKNMBVp/view?usp=sharing
-
+<h1>USAGE</h1> <br>
+<ul>
+<li>The file to run is inside profanity-checker/mark1.py</li>
+<li>You need a genius API token to run this</li>
+<li>You also need a contractions bin file to run this. Can be found in the google drive link provided</li>
+<li>You need to source the activation file found in code/genius/bin/activate</li>
+</ul>
 
 <h1>TODO</h1> <br>
 <ul>
@@ -23,5 +29,13 @@ https://drive.google.com/file/d/1NSPClpuNIZQegvp1M5EEUUUzvAKNMBVp/view?usp=shari
   <li>need to create main software</li>
   <li>need to come up with a formula to rank, will think it over</li>
   <li>more importantly need to name it. will probably be the hardest thing about this project</li>
+
+  <h3>august 24</h3>
+  <li>I ended up just calling it mark1</li>
+  <li>It "works". At the end of the day it is just a basic implementation of logistic regression to classify lyrics based on a 2000 row profanity file</li>
+  <li>It does not properly detect the sentiment behind the lyrics, for example during testing the song 'im back' by eminem, the software gave me a profanity percentage of 15 percent. That song deserves way more, but since it follows a bag of words approach as opposed to sentimental analysis, this is the best i can do right now</li>
+  <li>need to clean the lyrics before i pass it to the model, for ex. need to remove duplicate lyrics</li>
+  <li>This project is far from over. Will definitely work on it in the future, will add sentimental analysis</li>
+  <li>This was supposed to be a 2 hour project for my AI class. LOL</li>
 </ul>
 
