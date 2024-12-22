@@ -5,10 +5,15 @@ requires bin file for contractions, file too big to put on github,
 https://drive.google.com/file/d/1NSPClpuNIZQegvp1M5EEUUUzvAKNMBVp/view?usp=sharing
 <h1>USAGE</h1> <br>
 <ul>
-<li>The file to run is inside profanity-checker/mark1.py</li>
-<li>You need a genius API token to run this</li>
-<li>You also need a contractions bin file to run this. Can be found in the google drive link provided</li>
 <li>You need to source the activation file found in code/genius/bin/activate</li>
+```
+source code/genius/bin/activate
+```
+<li>The script to run is profanity-checker/mark1.py</li>
+```
+python3 mark1.py
+```
+<li>You also need a contractions bin file to run this. Can be found in the google drive link provided. Place the file in the root folder</li>
 </ul>
 
 <h1>TODO</h1> <br>
