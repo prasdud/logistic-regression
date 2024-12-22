@@ -6,12 +6,12 @@ https://drive.google.com/file/d/1NSPClpuNIZQegvp1M5EEUUUzvAKNMBVp/view?usp=shari
 <h1>USAGE</h1> <br>
 <ul>
 <li>You need to source the activation file found in code/genius/bin/activate</li>
-```
-source code/genius/bin/activate
+```source code/genius/bin/activate
+
 ```
 <li>The script to run is profanity-checker/mark1.py</li>
-```
-python3 mark1.py
+```python3 mark1.py
+
 ```
 <li>You also need a contractions bin file to run this. Can be found in the google drive link provided. Place the file in the root folder</li>
 </ul>
