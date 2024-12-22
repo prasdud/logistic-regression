@@ -4,23 +4,53 @@ import joblib
 import lyricsgenius
 import csv
 from pycontractions import Contractions
-
+import time
+import os.path
 
 # Load models
-model = joblib.load('model.pkl')
-vectorizer = joblib.load('count_vectorizer.pkl')
+print("Loading model", end="", flush=True)
+try:
+    model = joblib.load('model.pkl')
+    print(f"\rModel ", model, " loaded succesfully")
+except Exception as e:
+    print(f"\rError loading model")
+    print(f"{e}")
+    exit()
+
+print("\rLoading vectorizer", end="", flush=True)
+try:
+    vectorizer = joblib.load('count_vectorizer.pkl')
+    print(f"\rVectorizer ", vectorizer, " loaded succesfully")
+except Exception as e:
+    print(f"\rError loading vectorizer")
+    print(f"{e}")
+    exit()
+
 genius= lyricsgenius.Genius("MpY2-SgiN1WZygcE3lXZiRZFnyTcWG8zQBVSyLZGVYnX9Hc607mreDQlvYXoQfDt")
-cont = Contractions('../GoogleNews-vectors-negative300.bin')
+#genius= lyricsgenius.Genius("Fx-gUjjxNsRvjfOIGBpeVhrBsKjNG5LQmWiEXYNyAo3od7HrSUZM8DM_68u0KPA3IwdtMO6HGOHmzpR6vQzkaw")
+print("\rLoading contractions.bin", end="", flush=True)
+#cont = Contractions('../GoogleNews-vectors-negative300.bin')
+if(os.path.exists("../GoogleNews-vectors-negative300.bin")):
+    cont = Contractions('../GoogleNews-vectors-negative300.bin')
+    print(f"\rContractions file loaded succesfully")
+else:
+    print(f"\rContractions file does not exist")
+    exit()
+
 lyricsFile = 'lyrics.csv'
 profanityFile = 'predictedProfanityFile.csv'
 
+                                                                                                                                  
 #lyrics = "im a boss you know"
-print("enter the name of the artist")
+print("\rEnter the name of the artist")
 artistName = input()
-print("enter the name of the song")
+print("Enter the name of the song")
 songName = input()
 song = genius.search_song(songName ,artistName)
-
+#print(song)
+if(song == None):
+    print(f"The song could not be found, try again with the correct song name")
+    exit()
 songExpanded = list(cont.expand_texts([song.lyrics]))
 Song = []
 
@@ -66,8 +96,8 @@ with open(profanityFile, mode='r', newline='') as infile:
 
 profanityPercent = round((labelOne/lyricCount) * 100, 2)
 
-print(f'The total no. of bars in the song are {lyricCount}')
-print(f'The no. of bad lyrics in this song are {labelOne}')
+print(f'\nThe number of bars in the song are {lyricCount}')
+print(f'The number of profane lyrics in this song are {labelOne}')
 print(f'The given song has a profanity rating of {profanityPercent}%')
 
 
