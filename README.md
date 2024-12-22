@@ -18,7 +18,7 @@ foo@bar:~$ sudo update-alternatives --config java
 foo@bar:~$ source code/genius/bin/activate`
 foo@bar:~$ python3 mark1.py
 ```
-
+![output](output.png){:height="600px" width="600px"}
 <h1>TODO</h1> <br>
 <ul>
   <li>i count about 245 lyrics or "bars" for 2 songs so about 122.5 bars per song. Assuming a robust model, i would need 50000 per class. so i have 2 classes, 1 = profane, 0 = not profane. so all in all 100,000 bars. if my math is right need about 816 songs. i will train it on 1000 songs just to be safe</li>
