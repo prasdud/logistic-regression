@@ -4,19 +4,16 @@ uses logistic regression algorithms to check whether a song contains profanity
 requires bin file for contractions, file too big to put on github, 
 https://drive.google.com/file/d/1NSPClpuNIZQegvp1M5EEUUUzvAKNMBVp/view?usp=sharing
 <h1>REQUIREMENTS</h1> <br>
-<ul>
-<li>You need a contractions bin file to run this. Can be found in the google drive link provided. Place the file in the root folder</li>
-<li>You need to source the activation file found in code/genius/bin/activate</li>
-<li>The script to run is profanity-checker/mark1.py</li>
-<li>The contractions feature requires Java 8. Download it and run the command as below</li>
-</ul>
+
+```console
+foo@bar:~$ pip install -r requirements.txt
+```
+
 <h1>USAGE</h1>
 
 ```console
-foo@bar:~$ cd logistic-regression
-foo@bar:~$ sudo update-alternatives --config java
-foo@bar:~$ source code/genius/bin/activate`
-foo@bar:~$ cd profanity-checker
+foo@bar:~$ source logistic-regression/bin/activate`
+foo@bar:~$ cd logistic-regression/profanity-checker
 foo@bar:~$ python3 mark1.py
 ```
 ![output](output.png)
