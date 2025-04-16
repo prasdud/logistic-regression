@@ -10,7 +10,7 @@ foo@bar:~$ pip install -r requirements.txt
 <h1>USAGE</h1>
 
 ```console
-foo@bar:~$ source logistic-regression/bin/activate`
+foo@bar:~$ source venv/bin/activate`
 foo@bar:~$ cd logistic-regression/profanity-checker
 foo@bar:~$ python3 mark1.py
 ```
