@@ -3,7 +3,7 @@
 import joblib
 import lyricsgenius
 import csv
-from pycontractions import Contractions
+import contractions
 import time
 import os.path
 
@@ -30,12 +30,12 @@ genius= lyricsgenius.Genius("MpY2-SgiN1WZygcE3lXZiRZFnyTcWG8zQBVSyLZGVYnX9Hc607m
 #genius= lyricsgenius.Genius("Fx-gUjjxNsRvjfOIGBpeVhrBsKjNG5LQmWiEXYNyAo3od7HrSUZM8DM_68u0KPA3IwdtMO6HGOHmzpR6vQzkaw")
 print("\rLoading contractions.bin", end="", flush=True)
 #cont = Contractions('../GoogleNews-vectors-negative300.bin')
-if(os.path.exists("../GoogleNews-vectors-negative300.bin")):
-    cont = Contractions('../GoogleNews-vectors-negative300.bin')
-    print(f"\rContractions file loaded succesfully")
-else:
-    print(f"\rContractions file does not exist")
-    exit()
+# if(os.path.exists("../GoogleNews-vectors-negative300.bin")):
+#     cont = Contractions('../GoogleNews-vectors-negative300.bin')
+#     print(f"\rContractions file loaded succesfully")
+# else:
+#     print(f"\rContractions file does not exist")
+#     exit()
 
 lyricsFile = 'lyrics.csv'
 profanityFile = 'predictedProfanityFile.csv'
@@ -51,13 +51,20 @@ song = genius.search_song(songName ,artistName)
 if(song == None):
     print(f"The song could not be found, try again with the correct song name")
     exit()
-songExpanded = list(cont.expand_texts([song.lyrics]))
-Song = []
+#songExpanded = list(cont.expand_texts([song.lyrics]))
+# Song = []
 
-for lyrics in songExpanded:
-    lines = lyrics.split('\n')
-    for line in lines:
-        Song.append([line])
+# for lyrics in songExpanded:
+#     lines = lyrics.split('\n')
+#     for line in lines:
+#         Song.append([line])
+
+Song = []
+lines = song.lyrics.split('\n')
+for line in lines:
+    expanded_line = contractions.fix(line)
+    Song.append([expanded_line])
+
 
 with open(lyricsFile, mode = 'w', newline='') as file:
     writer = csv.writer(file)
